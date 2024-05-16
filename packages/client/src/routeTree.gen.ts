@@ -55,26 +55,44 @@ const PostsPostIdRoute = PostsPostIdImport.update({
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
       preLoaderRoute: typeof BlogImport
       parentRoute: typeof rootRoute
     }
     '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
       preLoaderRoute: typeof CreateImport
       parentRoute: typeof rootRoute
     }
     '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
     '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
       preLoaderRoute: typeof RegisterImport
       parentRoute: typeof rootRoute
     }
     '/posts/$postId': {
+      id: '/posts/$postId'
+      path: '/posts/$postId'
+      fullPath: '/posts/$postId'
       preLoaderRoute: typeof PostsPostIdImport
       parentRoute: typeof rootRoute
     }
@@ -83,13 +101,13 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([
+export const routeTree = rootRoute.addChildren({
   IndexRoute,
   BlogRoute,
   CreateRoute,
   LoginRoute,
   RegisterRoute,
   PostsPostIdRoute,
-])
+})
 
 /* prettier-ignore-end */
